@@ -24,7 +24,7 @@ module.exports = function (args, socket) {
         if (disposition) {
             const nameMatch = disposition.match(/filename="(.+)"/);
             if (nameMatch) {
-                let name = nameMatch[1].replace(" (z-lib.org)", "");
+                let name = nameMatch[1].replace(" (1lib.sk)", ""); // Implement auto domain search and update?
                 // Convert multi-byte chars to their true representation
                 name = Buffer.from(name, "binary").toString("utf8");
 

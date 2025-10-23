@@ -54,11 +54,11 @@ nano /opt/etc/zshelf/config.json
 9. Start zshelf to test configuration:
 ```bash
 zshelf
-```
+``` 
 
 reMarkable 2 user, use this instead:
 ```bash
-LD_PRELOAD=/opt/lib/librm2fb_client.so.1.0.0 zshelf
+LD_PRELOAD=$(ls -1v /opt/lib/librm2fb_client.so* 2>/dev/null | tail -n1) zshelf  # adjusted for version mismatch; should self-correct now
 ```
 
 Downloaded EPUB and PDF books will be automatically available on your reMarkable app (if not, please restart the app or restart device). `zshelf` also makes a copy of the book to location configured in `additionalBookLocation`, so you can open it in other reader like [`KOReader`](https://github.com/koreader/koreader/wiki/Installation-on-Remarkable), which has ten fold better reading experience, highly recommended and also available on `toltec`.
